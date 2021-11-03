@@ -19,7 +19,7 @@ export async function handler(event: AppSyncEvent) {
     return "Hello World from AppSync Lambda";
   } else if (event.info.fieldName == "addProduct") {
     console.log(`Event Data = ${event.arguments.product}`);
-    return `Product Data ${event.arguments.product.name}`;
+    return event.arguments.product;
   } else {
     return "Not Found!";
   }

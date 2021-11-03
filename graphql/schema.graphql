@@ -5,9 +5,14 @@ type Query {
 
 input ProductInput {
   name: String
-  print: Int
+  price: Int
+}
+
+type Product {
+  name: String
+  price: Int
 }
 
 type Mutation {
-  addProduct(product: ProductInput): String
+  addProduct(product: ProductInput): Product
 }
