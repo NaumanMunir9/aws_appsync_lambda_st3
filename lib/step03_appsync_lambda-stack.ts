@@ -37,5 +37,14 @@ export class Step03AppsyncLambdaStack extends cdk.Stack {
       typeName: "Query",
       fieldName: "welcome",
     });
+
+    // CFN Outputs
+    new cdk.CfnOutput(this, "AppSyncApiUrl", {
+      value: api.graphqlUrl,
+    });
+
+    new cdk.CfnOutput(this, "AppSyncApiKey", {
+      value: api.apiKey || "",
+    });
   }
 }
