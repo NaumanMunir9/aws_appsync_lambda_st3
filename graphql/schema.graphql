@@ -2,3 +2,12 @@ type Query {
   welcome: String
   hello: String
 }
+
+input ProductInput {
+  name: String
+  print: Int
+}
+
+type Mutation {
+  addProduct(product: ProductInput): String
+}
