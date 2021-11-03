@@ -38,6 +38,11 @@ export class Step03AppsyncLambdaStack extends cdk.Stack {
       fieldName: "welcome",
     });
 
+    lambdaDataSource.createResolver({
+      typeName: "Query",
+      fieldName: "hello",
+    });
+
     // CFN Outputs
     new cdk.CfnOutput(this, "AppSyncApiUrl", {
       value: api.graphqlUrl,
